@@ -1,0 +1,95 @@
+/* 
+* Personalized for: Menna Mostafa - Creative Tech
+* Frontend | Graphic | 3D Artist | Future Full Stack
+* Contact: https://www.facebook.com/share/1BhCNMXV4n/
+*/
+
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Mulish", sans-serif;
+  --nav-font: "Raleway", sans-serif;
+}
+
+:root { 
+  --background-color: #0a0a1a; /* خلفية منه الداكنة */
+  --default-color: #d9d9d9;
+  --heading-color: #ffffff;
+  --accent-color: #7df9ff; /* لون منه المميز - Cyan */
+  --surface-color: #14142a;
+  --contrast-color: #ffffff;
+}
+
+:root {
+  --nav-color: #d9d9d9;
+  --nav-hover-color: #7df9ff;
+  --nav-mobile-background-color: #14142a;
+  --nav-dropdown-background-color: #1c1c3a;
+  --nav-dropdown-color: #d9d9d9;
+  --nav-dropdown-hover-color: #7df9ff;
+}
+
+.light-background {
+  --background-color: rgba(20, 20, 42, 0.9);
+  --surface-color: #1e1e3f;
+}
+
+.dark-background {
+  --background-color: #060610;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #12122a;
+  --contrast-color: #ffffff;
+}
+
+:root { scroll-behavior: smooth; }
+
+/* ... باقي كود التمبلت الأصلي هو هو لحد الآخر ... */
+
+/* ===== تعديل منه الخاص - سكشن التواصل أزرق ===== */
+#contact.section {
+  --background-color: #0a2a5c !important;
+  background: #0a2a5c !important;
+  background-color: #0a2a5c !important;
+}
+
+#contact .section-title h2,
+#contact .section-title p,
+#contact .section-title .subtitle {
+  color: #ffffff !important;
+}
+#contact .section-title .subtitle::after {
+  background: #7df9ff !important;
+}
+
+#contact .info-item,
+#contact .php-email-form {
+  background: #ffffff !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+}
+#contact .info-item h3,
+#contact .info-item p,
+#contact .php-email-form label {
+  color: #0a0a1a !important;
+}
+#contact .php-email-form button[type=submit] {
+  background: #7df9ff !important;
+  color: #0a0a1a !important;
+  font-weight: 800;
+}
+/* تعديل منه النهائي - خلاص كده */
+#contact {
+  background: #0a2a5c !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+#contact .container {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 40px 30px !important;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+#contact .section-title h2,
+#contact .section-title p {
+  color: #ffffff !important;
+}

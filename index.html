@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menna - Creative Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter','Cairo',sans-serif;background:#fff;color:#111;overflow-x:hidden}
+:root{--red:#e11d48;--blue:#0a2a5c;--purple:#7c3aed;--grad:linear-gradient(90deg,#0a2a5c,#e11d48,#7c3aed)}
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;padding:14px 5%}
+.logo{font-family:'Cairo';font-weight:800;font-size:13px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+nav ul{display:flex;gap:14px;list-style:none;align-items:center;flex-direction:row-reverse}
+nav ul li a{font-weight:800;font-size:11.5px;text-decoration:none;color:#0a2a5c}
+.btn{background:var(--grad);color:#fff!important;padding:10px 20px;border-radius:100px;font-weight:800;text-decoration:none;font-size:11px;display:inline-flex;align-items:center;gap:8px;transition:.3s}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:110px 5% 20px}
+.hero h1{font-size:52px;font-weight:900}
+.typed{background:var(--grad);color:#fff;padding:10px 18px;border-radius:8px;font-weight:800;font-size:19px;display:inline-block;min-width:230px;margin-top:14px}
+.colored-text{margin-top:22px;max-width:580px;line-height:1.9;font-size:15px;font-weight:600;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-family:'Cairo'}
+.hero-img{height:85vh;display:flex;align-items:center;justify-content:center;position:relative}
+.blob{position:absolute;width:88%;height:80%;background:var(--grad);opacity:.08;border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;animation:blobMove 8s ease infinite}
+@keyframes blobMove{0%,100%{border-radius:30% 70% 70% 30% / 30% 30% 70% 70%}50%{border-radius:70% 30% 30% 70% / 70% 70% 30% 30%}}
+.img-box{width:90%;height:520px;border-radius:22px;overflow:hidden;z-index:2;background:#f0f0f0;border:1px solid #eee;transition:.4s}
+.img-box:hover{transform:scale(1.02)}
+.img-box img{width:100%;height:100%;object-fit:cover;display:block}
+.social{margin-top:24px;display:flex;gap:12px}
+.social a{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-size:18px;transition:.3s}
+.social a:hover{transform:translateY(-4px) scale(1.1)}
+.social a.fb{background:#1877F2} .social a.mail{background:linear-gradient(135deg,#e11d48,#7c3aed)} .social a.ig{background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)} .social a.wa{background:#25D366}
+section{padding:80px 5%}.eyebrow{color:var(--red);font-size:11px;letter-spacing:4px;font-weight:900;text-align:center;display:block;margin-bottom:10px}.title{font-size:42px;font-weight:900;text-align:center}.desc{color:#777;font-size:13px;text-align:center;max-width:650px;margin:12px auto 50px;line-height:1.8;font-family:'Cairo'}
+.grid2{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}.card{background:#f9f9f9;border:1px solid #eee;border-radius:18px;padding:26px;transition:.3s}.card:hover{transform:translateY(-5px)}
+.stats{display:flex;gap:10px;margin-top:18px}.stat{flex:1;background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;text-align:center}.stat b{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:22px;display:block}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.info-item{font-size:12px;color:#666;display:flex;gap:8px;align-items:center}.info-item i{color:var(--red);width:18px}
+.skill{margin-bottom:18px}.top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px}.bar{height:6px;background:#eee;border-radius:10px;overflow:hidden}.fill{height:100%;background:var(--grad);width:0;transition:1.5s ease}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}.srv{background:#f9f9f9;border:1px solid #eee;border-radius:14px;padding:20px;transition:.4s}.srv:hover{transform:translateY(-10px);background:#fff;box-shadow:0 20px 40px rgba(10,42,92,.12)}.srv i{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:22px;margin-bottom:10px;display:block}
+.cta{background:linear-gradient(270deg,#0a2a5c,#e11d48,#7c3aed,#0a2a5c);background-size:400% 400%;border-radius:18px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;margin-top:40px;color:#fff;animation:gradientMove 5s ease infinite}
+@keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.port-f{display:flex;gap:8px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}.f{padding:7px 16px;border-radius:100px;border:1px solid #e5e5e5;background:#fff;color:#777;font-size:11px;cursor:pointer}.f.active{background:var(--grad);color:#fff;border-color:transparent}
+.port{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.p-box{width:100%;height:320px;border-radius:16px;overflow:hidden;background:#f2f2f2;border:1px solid #eee;transition:.4s}.p-box:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 15px 35px rgba(0,0,0,.12)}.p-box img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}.p-box:hover img{transform:scale(1.1)}
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:30px}.t-item{border-left:2px solid #eee;padding-left:20px;margin-bottom:32px;transition:.3s}.t-item:hover{border-left-color:var(--red);transform:translateX(5px)}
+#future{background:#f8f9ff;border-top:1px solid #eef0ff}.future-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:20px}.future-card{background:#fff;border:1px solid #eef0ff;border-radius:18px;padding:28px;transition:.3s}.future-card:hover{transform:translateY(-8px)}.future-card h3{font-size:20px;font-weight:900;margin-bottom:12px;display:flex;align-items:center;gap:10px}.future-card h3 i{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.future-card p{color:#666;font-size:13.5px;line-height:1.9;font-family:'Cairo'}.future-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.future-item{background:#fff;border:1px solid #eef0ff;border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;transition:.3s}.future-item:hover{transform:scale(1.03)}.future-item i{width:36px;height:36px;border-radius:10px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+#contact{background:#0a2a5c!important}#contact .eyebrow{color:#a8c0ff!important}#contact .title{color:#fff!important}
+#contact .contact{max-width:750px;margin:0 auto;background:#fff!important;border-radius:20px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#contact .contact input,#contact .contact textarea{width:100%;background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:13px;outline:none}#contact .contact textarea{grid-column:1/-1}
+#about{background:#f2f2f5!important}#resume{background:#f2f2f5!important}#portfolio{background:#f2f2f5!important}#services{background:#ffffff!important}
+
+/* حركات آمنة - كل حاجة ظاهرة في الأساس */
+.anim{opacity:1;transform:translateY(0);transition:1s cubic-bezier(.2,.8,.2,1)}
+.anim.from-left{transform:translateX(0)} .anim.from-right{transform:translateX(0)} .anim.from-bottom{transform:translateY(0)}
+/* لما الصفحة تحمل هنخفيهم بالجافاسكريبت وبعدين نرجعهم بحركة */
+.anim.hidden{opacity:0}.anim.hidden.from-left{transform:translateX(-80px)}.anim.hidden.from-right{transform:translateX(80px)}.anim.hidden.from-bottom{transform:translateY(60px)}
+.anim.show{opacity:1!important;transform:translate(0,0)!important}
+
+@media(max-width:900px){.hero,.grid2,.timeline,.services,.port,.future-grid{grid-template-columns:1fr}.hero-img{height:55vh}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">أنا منه مصطفى أحمد عبد المنعم ندا طالبه في قسم نظم المعلومات</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#future">Future Vision</a></li>
+<li><a href="#contact" class="btn">Contact</a></li>
+</ul>
+</nav>
+
+<section id="home" class="hero">
+<div class="anim from-left" style="direction:ltr;text-align:left">
+<h1>I'm menna</h1>
+<div class="typed" id="typed">I'm a Developer</div>
+<p class="colored-text" style="direction:ltr;text-align:left">I'm a passionate Frontend Developer & Creative Designer crafting modern, fast, and visually stunning digital experiences.</p>
+<div class="social" style="direction:ltr;justify-content:flex-start">
+<a class="fb" href="https://www.facebook.com/share/1BhCNMXV4n/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+<a class="mail" href="mailto:mpofeindi@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+<a class="ig" href="#"><i class="fa-brands fa-instagram"></i></a>
+<a class="wa" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+</div>
+<div class="hero-img anim from-right"><div class="blob"></div><div class="img-box"><img src="assets/img/profile/WhatsApp Image 2026-10-17 at 4.25.45 AM.jpeg" alt="Menna"></div></div>
+</section>
+
+<section id="about"><span class="eyebrow anim from-bottom">ABOUT ME</span><h2 class="title anim from-bottom">About Me</h2><p class="desc anim from-bottom">Crafting digital experiences with passion & creativity</p>
+<div class="grid2">
+<div class="card anim from-right"><h3 style="font-size:22px">Transforming Ideas into <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Digital Reality</span></h3>
+<div class="stats"><div class="stat"><b>120+</b><span style="font-size:11px;color:#777">Projects</span></div><div class="stat"><b>4.9</b><span style="font-size:11px;color:#777">Rating</span></div><div class="stat"><b>3+</b><span style="font-size:11px;color:#777">Years</span></div></div>
+<div class="info"><div class="info-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-5678</div><div class="info-item"><i class="fa-solid fa-graduation-cap"></i> نظم معلومات</div><div class="info-item"><i class="fa-solid fa-envelope"></i> mpofeindi@gmail.com</div><div class="info-item"><i class="fa-solid fa-briefcase"></i> Open to Work</div></div>
+</div>
+<div class="anim from-left"><h3 style="margin-bottom:20px">Technical Proficiency</h3>
+<div class="skill"><div class="top"><span>Frontend Development</span><span>95%</span></div><div class="bar"><div class="fill" data-w="95%"></div></div></div>
+<div class="skill"><div class="top"><span>Graphic Design</span><span>90%</span></div><div class="bar"><div class="fill" data-w="90%"></div></div></div>
+<div class="skill"><div class="top"><span>UI/UX Design</span><span>88%</span></div><div class="bar"><div class="fill" data-w="88%"></div></div></div>
+<div class="skill"><div class="top"><span>3D Design</span><span>92%</span></div><div class="bar"><div class="fill" data-w="92%"></div></div></div>
+</div>
+</div>
+</section>
+
+<section id="resume"><span class="eyebrow anim from-bottom">RESUME</span><h2 class="title anim from-bottom">Resume</h2>
+<div class="timeline">
+<div class="anim from-left"><span class="eyebrow" style="text-align:left">EXPERIENCE</span><h3 style="margin:12px 0 20px">Professional Journey</h3>
+<div class="t-item"><h4>Frontend Developer</h4><p style="color:#777;font-size:12px">UI/UX & 3D Design — 2023 to Now</p></div>
+<div class="t-item"><h4>Graphic Designer</h4><p style="color:#777;font-size:12px">Branding, T-Shirt & Social — 2022 to Now</p></div>
+</div>
+<div class="anim from-right"><span class="eyebrow" style="text-align:left">EDUCATION</span><h3 style="margin:12px 0 20px">Academic Background</h3>
+<div class="t-item"><h4>أنا منه مصطفى أحمد عبد المنعم ندا</h4><p style="color:#777;font-size:12px">طالبه في قسم نظم المعلومات</p></div>
+<div class="t-item"><h4>Bachelor of Fine Arts</h4><p style="color:#777;font-size:12px">Creative Arts University — 2011-2015</p></div>
+</div>
+</div>
+</section>
+
+<section id="services"><span class="eyebrow anim from-bottom">SERVICES</span><h2 class="title anim from-bottom">Services</h2><p class="desc anim from-bottom">What I do best</p>
+<div class="services">
+<div class="srv anim from-left"><i class="fa-solid fa-pen-nib"></i><h4>Brand Identity</h4></div>
+<div class="srv anim from-bottom"><i class="fa-solid fa-object-group"></i><h4>UI/UX Design</h4></div>
+<div class="srv anim from-bottom"><i class="fa-solid fa-code"></i><h4>Development</h4></div>
+<div class="srv anim from-right"><i class="fa-solid fa-cube"></i><h4>3D Design</h4></div>
+<div class="srv anim from-left"><i class="fa-solid fa-shirt"></i><h4>T-Shirt Design</h4></div>
+<div class="srv anim from-bottom"><i class="fa-solid fa-bullhorn"></i><h4>Social Media</h4></div>
+<div class="srv anim from-bottom"><i class="fa-solid fa-wand-magic-sparkles"></i><h4>Graphics Design</h4></div>
+<div class="srv anim from-right"><i class="fa-solid fa-mobile-screen"></i><h4>Mobile Apps</h4></div>
+</div>
+<div class="cta anim from-bottom"><div><h3>Transform Your Vision Into Reality</h3><p style="font-size:12px;opacity:.9;margin-top:4px">Let's create something amazing together</p></div><a href="#contact" style="background:#fff;color:var(--red);padding:12px 24px;border-radius:100px;text-decoration:none;font-weight:800;font-size:12px">Let's Talk</a></div>
+</section>
+
+<section id="portfolio"><span class="eyebrow anim from-bottom">PORTFOLIO</span><h2 class="title anim from-bottom">Portfolio</h2>
+<div class="port-f anim from-bottom"><button class="f active">All Work</button><button class="f">Branding</button><button class="f">Frontend</button><button class="f">3D Design</button></div>
+<div class="port">
+<div class="p-box anim from-bottom"><img src="assets/img/portfolio/1.jpg"></div>
+<div class="p-box anim from-bottom"><img src="assets/img/portfolio/2.jpeg"></div>
+<div class="p-box anim from-bottom"><img src="assets/img/portfolio/3.jpeg"></div>
+<div class="p-box anim from-bottom"><img src="assets/img/portfolio/4.jpg"></div>
+<div class="p-box anim from-bottom"><img src="assets/img/portfolio/5.jpg"></div>
+<div class="p-box anim from-bottom"><img src="assets/img/portfolio/6.jpg"></div>
+</div>
+</section>
+
+<section id="future">
+<span class="eyebrow anim from-bottom">MY ROADMAP</span>
+<h2 class="title anim from-bottom">Future Vision</h2>
+<p class="desc anim from-bottom">رحلتي الجاية.. إيه اللي هتعلمه وإيه اللي هحققه</p>
+<div class="future-grid">
+<div class="future-card anim from-left">
+<h3><i class="fa-solid fa-rocket"></i> Who I Am & Where I'm Going</h3>
+<p>أنا <b>منه مصطفى أحمد عبد المنعم ندا</b>، طالبه في قسم <b>نظم المعلومات الإدارية</b>. بدأت كـ Graphic Designer و Frontend Developer، وبقيت بحب أدمج الكود بالإبداع والـ 3D.<br><br><b>هدفي القريب:</b> أخلص دراستي وأبقى Full Stack Developer محترفة، وأعمل براند خاص بيا في التصميم والبرمجة.<br><br><b>حلمي الكبير:</b> اني افتح شركه خاصه بيا كبيره في مجال التصميم والبرمجة، وأعمل مشاريع بالـ AI والـ 3D تخدم الناس وتسهل حياتهم وتشغل ناس كتير معايا.</p>
+</div>
+<div class="future-card anim from-right">
+<h3><i class="fa-solid fa-graduation-cap"></i> What I'm Learning Next</h3>
+<p style="margin-bottom:10px">الخطة الجاية للتعلم والتطوير:</p>
+<div class="future-list">
+<div class="future-item"><i class="fa-brands fa-react"></i><div><b>Full Stack - MERN</b><span>Node.js, MongoDB, Next.js</span></div></div>
+<div class="future-item"><i class="fa-solid fa-brain"></i><div><b>AI & Automation</b><span>AI Tools, Chatbots, APIs</span></div></div>
+<div class="future-item"><i class="fa-solid fa-cube"></i><div><b>Advanced 3D</b><span>Blender, Three.js, WebGL</span></div></div>
+<div class="future-item"><i class="fa-solid fa-mobile"></i><div><b>Mobile Apps</b><span>React Native, Flutter</span></div></div>
+<div class="future-item"><i class="fa-solid fa-chart-line"></i><div><b>Freelancing Business</b><span>Upwork, Brand, Clients</span></div></div>
+<div class="future-item"><i class="fa-solid fa-language"></i><div><b>English + UI/UX Pro</b><span>Figma Advanced, Research</span></div></div>
+</div>
+</div>
+</div>
+<div class="cta anim from-bottom" style="margin-top:40px"><div><h3 style="font-family:'Cairo'">2026 - سنة التحول بتاعتي 🚀</h3><p style="font-size:12px;opacity:.9;margin-top:4px;font-family:'Cairo'">من طالبة نظم معلومات لـ Full Stack Developer & Creative Founder</p></div><a href="#contact" style="background:#fff;color:var(--red);padding:12px 24px;border-radius:100px;text-decoration:none;font-weight:800;font-size:12px">Join My Journey</a></div>
+</section>
+
+<section id="contact" class="anim from-bottom"><span class="eyebrow">CONTACT</span><h2 class="title">Contact</h2>
+<div class="contact"><input placeholder="Your Name"><input placeholder="Your Email"><input placeholder="Subject" style="grid-column:1/-1"><textarea rows="4" placeholder="Message"></textarea>
+<div style="grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+<a href="https://www.facebook.com/share/1BhCNMXV4n/" target="_blank" class="btn" style="flex:1;justify-content:center"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+<a href="mailto:mpofeindi@gmail.com" class="btn" style="flex:1;justify-content:center;background:#111">Google Email</a>
+</div>
+</div>
+</section>
+
+<footer style="text-align:center;padding:30px 5%;border-top:1px solid #eee;color:#999;font-size:12px">© 2026 منه مصطفى — All Animations Safe Edition ✨</footer>
+
+<script>
+// 1- كتابة متحركة
+const roles=["I'm a Developer","I'm a Designer","I'm a 3D Designer","Future Full Stack","Creative Founder"];let i=0,j=0,del=false;
+function type(){const el=document.getElementById('typed');if(!el)return;const cur=roles[i];if(!del){el.textContent=cur.slice(0,++j);if(j===cur.length){del=true;setTimeout(type,1500);return}}else{el.textContent=cur.slice(0,--j);if(j===0){del=false;i=(i+1)%roles.length}}setTimeout(type,del?35:85);}type();
+
+// 2- حركة آمنة لكل الأقسام - لو الجافاسكريبت فشل هتفضل ظاهرة
+document.addEventListener('DOMContentLoaded',()=>{
+  const anims=document.querySelectorAll('.anim');
+  // نخفيهم بالجافاسكريبت بس بعد ما الصفحة تحمل (لو الجافاسكريبت مش شغال هيفضلوا ظاهرين)
+  anims.forEach(a=>a.classList.add('hidden'));
+  
+  // بعد ثانية نبدأ نراقب
+  setTimeout(()=>{
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.remove('hidden');
+          e.target.classList.add('show');
+          // شريط المهارات
+          e.target.querySelectorAll('.fill').forEach(b=>b.style.width=b.dataset.w);
+          // لو فيه fill جوه
+          if(e.target.classList.contains('fill')) e.target.style.width=e.target.dataset.w;
+          // لو الأب فيه fill
+          e.target.querySelectorAll && e.target.querySelectorAll('.fill').forEach(b=>b.style.width=b.dataset.w);
+        }
+      });
+    },{threshold:0.15});
+    
+    anims.forEach(a=>obs.observe(a));
+    // شغلي أول قسمين فورا
+    document.querySelectorAll('#home .anim').forEach(a=>{a.classList.remove('hidden');a.classList.add('show')});
+    
+    // مراقب خاص للمهارات
+    document.querySelectorAll('.fill').forEach(b=>{
+      const o2=new IntersectionObserver((es)=>{
+        es.forEach(en=>{if(en.isIntersecting) en.target.style.width=en.target.dataset.w})
+      },{threshold:0.5});
+      o2.observe(b);
+    });
+  },100);
+});
+</script>
+</body>
+</html>
